@@ -1,0 +1,50 @@
+AgencyDb
+	- ArrayList<Agency> getAgencyList()
+	- Agency getAgency(int idAgency, ArrayList<Agency>  listAgency)
+
+AgentDb
+	- ArrayList<Agent> getAgentList()
+	- boolean updateAgent(Agent oldAgent , Agent newAgent)
+	- int deleteAgent(Agent agent)
+	- int addAgent(Agent newAgent)
+	- Agent getAgent(int idAgent,ArrayList<Agent>  listAgent)
+
+BookingDb
+	- ArrayList<Booking> getBookingList()
+	- ArrayList<Booking> GetBookingOfCustomer(int customerId, ArrayList <Booking> listBookings )
+
+Customer_rewardsDb
+	- ArrayList<Customer_rewards> getCustomer_rewardsList()
+	- ArrayList<Customer_rewards>  getCustomer_rewardsForCustomer(int idcustomer , ArrayList<Customer_rewards> customer_rewardsList  )
+
+CustomerDb
+	- ArrayList<Customer> getCustomerList()
+	- boolean updateCustomer(Customer oldCutomer , Customer newCustomer)
+	- int deleteCustmer(Customer customer)
+	- int addCustomer(Customer newCustomer)
+	- Customer getCustomer(int idCustomer,ArrayList<Customer>  listCustomer)
+
+ProductDb
+	- ArrayList<Product> getProductList()
+	- boolean updateProduct(Product oldProduct , Product newProduct)
+	- int deleteProduct(Product product)
+	- int addProduct(Product newProduct)
+	- Product getProduct(int idprod,ArrayList<Product>  listProduct)
+
+ProductSupplierDb
+	- ArrayList<ProductSupplier> getProductSupplierList()
+	- boolean updateProductSupplier(ProductSupplier oldProductSupplier , ProductSupplier newProductSupplier)
+	- int deleteProductSupplier(ProductSupplier productSupplier)
+	- int addProductSupplier(ProductSupplier newProductSupplier)
+	- ProductSupplier getProductSupplier(int idprodsup,ArrayList<ProductSupplier>  listProductSupplier)
+
+SupplierDb
+	- ArrayList<Supplier> getSupplierList()
+	- boolean updateSupplier(Supplier oldSupplier , Supplier newSupplier)
+	- int deleteSupplier(Supplier supplier)
+	- int addSupplier(Supplier newSupplier)
+	- Supplier getSupplier(int idsup,ArrayList<Supplier>  listSupplier)
+
+TripTypeDb
+	- ArrayList<TripType> getTripTypesList()
+	- TripType  getTripTypeByid(String idtt , ArrayList<TripType> TripTypeList  )
