@@ -91,7 +91,7 @@ public class ProductDb {
             conn = dbconn.createConnection();
 
             String sql = "UPDATE products " +
-                    "SET ProdName = ?, " +
+                    "SET ProdName = ? " +
                     "WHERE ProductId = ? ";
 
             // Create a Prepared Statement object

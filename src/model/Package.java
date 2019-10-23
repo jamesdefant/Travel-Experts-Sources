@@ -11,6 +11,9 @@ package model;
 
 import java.util.Date;
 
+import com.google.gson.annotations.JsonAdapter;
+
+@JsonAdapter(PackageAdapter.class)
 public class Package {
 
     private int PackageId;
@@ -18,11 +21,11 @@ public class Package {
 	private Date PkgStartDate;	//nullable
 	private Date PkgEndDate;	 //nullable
 	private String PkgDesc	; //nullable
-	private float PkgBasePrice 	;
-	private Float	PkgAgencyCommission ; //nullable
+	private double PkgBasePrice 	;
+	private Double	PkgAgencyCommission ; //nullable
 
 	public Package(int packageId, String pkgName, Date pkgStartDate, Date pkgEndDate, String pkgDesc,
-				   float pkgBasePrice, Float pkgAgencyCommission) {
+				   double pkgBasePrice, Double pkgAgencyCommission) {
 		PackageId = packageId;
 		PkgName = pkgName;
 		PkgStartDate = pkgStartDate;
@@ -73,19 +76,19 @@ public class Package {
 		PkgDesc = pkgDesc;
 	}
 
-	public float getPkgBasePrice() {
+	public double getPkgBasePrice() {
 		return PkgBasePrice;
 	}
 
-	public void setPkgBasePrice(float pkgBasePrice) {
+	public void setPkgBasePrice(double pkgBasePrice) {
 		PkgBasePrice = pkgBasePrice;
 	}
 
-	public Float getPkgAgencyCommission() {
+	public Double getPkgAgencyCommission() {
 		return PkgAgencyCommission;
 	}
 
-	public void setPkgAgencyCommission(Float pkgAgencyCommission) {
+	public void setPkgAgencyCommission(Double pkgAgencyCommission) {
 		PkgAgencyCommission = pkgAgencyCommission;
 	}
 	//copy a package

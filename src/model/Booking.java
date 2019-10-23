@@ -11,6 +11,9 @@ package model;
 
 import java.util.Date;
 
+import com.google.gson.annotations.JsonAdapter;
+
+@JsonAdapter(BookingAdapter.class)
 public class Booking {
 		private int BookingId;
 		private Date BookingDate ;
@@ -55,7 +58,7 @@ public class Booking {
         BookingNo = bookingNo;
     }
 
-    public double getTravelerCount() {
+    public Double getTravelerCount() {
         return TravelerCount;
     }
 
