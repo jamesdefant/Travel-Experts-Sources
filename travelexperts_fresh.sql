@@ -121,7 +121,7 @@ INSERT INTO `agents` (`AgentId`, `AgtFirstName`, `AgtMiddleInitial`, `AgtLastNam
 (9, 'Brian', 'S.', 'Peterson', '(403) 210-7833', 'brian.peterson@travelexperts.com', 'Junior Agent', 2);
 
 INSERT INTO `agents` (`AgentId`, `AgtFirstName`, `AgtMiddleInitial`, `AgtLastName`, `AgtBusPhone`, `AgtEmail`, `AgtPosition`, `AgencyId`, `AgtUserId`, `AgtPassword`) VALUES
-(10, 'Joan', NULL, 'Rivers', '(403) 224-5435', 'joan.rivers@travelexperts.com', 'Senior Agent', 1, 'user', 'password');
+(10, 'Joan', NULL, 'Rivers', '(403) 210-7835', 'joan.rivers@travelexperts.com', 'Senior Agent', 1, 'user', 'password');
 -- --------------------------------------------------------
 
 --
