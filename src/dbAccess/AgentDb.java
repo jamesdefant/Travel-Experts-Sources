@@ -59,10 +59,11 @@ public class AgentDb {
                 String agtPosition = rs.getString(7);
                 Integer  agencyId =  rs.getInt(8);
                 if (rs.wasNull()) agencyId= null ;
-
+                String agtUserId=rs.getString(9);
+                String agtPassword=rs.getString(10);
 
                 Agent newAgent= new Agent( agentId, agtFirstName, agtMiddleInitial,agtLastName,
-                         agtBusPhone, agtEmail, agtPosition,  agencyId);
+                        agtBusPhone, agtEmail, agtPosition,  agencyId,agtUserId,agtPassword);
 
                 // Add the newcustomer to the list
                 listAgent.add(newAgent  );
@@ -105,7 +106,9 @@ public class AgentDb {
                     "`AgtBusPhone` = ?, " +
                     "`AgtEmail` = ?, " +
                     "`AgtPosition` = ?, " +
-                    "`AgencyId` = ? " +
+                    "`AgencyId` = ? ," +
+                    "`AgtUserId` = ? ," +
+                    "`AgtPassword` = ? " +
                     "WHERE `AgentId` = ? " +
                     "AND (`AgtFirstName` = ? OR " +
                     "( `AgtFirstName` IS NULL AND ? IS NULL))" +
@@ -136,32 +139,34 @@ public class AgentDb {
                 stmt.setInt(7, newAgent.getAgencyId());
             else
                 stmt.setString(7, null  );
+            stmt.setString(8,newAgent.getAgtUserId());
+            stmt.setString(9, newAgent.getAgtPassword());
 
-            stmt.setInt(8, oldAgent.getAgentId());
+            stmt.setInt(10, oldAgent.getAgentId());
             //Check for optimistic concurrancy
 
-            stmt.setString(9, oldAgent.getAgtFirstName());
-            stmt.setString(10, oldAgent.getAgtFirstName());
+            stmt.setString(11, oldAgent.getAgtFirstName());
+            stmt.setString(12, oldAgent.getAgtFirstName());
 
-            stmt.setString(11, oldAgent.getAgtMiddleInitial());
-            stmt.setString(12, oldAgent.getAgtMiddleInitial());
+            stmt.setString(13, oldAgent.getAgtMiddleInitial());
+            stmt.setString(14, oldAgent.getAgtMiddleInitial());
 
-            stmt.setString(13, oldAgent.getAgtLastName());
-            stmt.setString(14, oldAgent.getAgtLastName());
+            stmt.setString(15, oldAgent.getAgtLastName());
+            stmt.setString(16, oldAgent.getAgtLastName());
 
-            stmt.setString(15, oldAgent.getAgtBusPhone());
-            stmt.setString(16, oldAgent.getAgtBusPhone());
-            stmt.setString(17, oldAgent.getAgtEmail());
-            stmt.setString(18, oldAgent.getAgtEmail());
-            stmt.setString(19, oldAgent.getAgtPosition());
-            stmt.setString(20, oldAgent.getAgtPosition());
+            stmt.setString(17, oldAgent.getAgtBusPhone());
+            stmt.setString(18, oldAgent.getAgtBusPhone());
+            stmt.setString(19, oldAgent.getAgtEmail());
+            stmt.setString(20, oldAgent.getAgtEmail());
+            stmt.setString(21, oldAgent.getAgtPosition());
+            stmt.setString(22, oldAgent.getAgtPosition());
 
             if (oldAgent.getAgencyId()!= null){
-                stmt.setInt(21, oldAgent.getAgencyId());
-                stmt.setInt(22, oldAgent.getAgencyId());}
+                stmt.setInt(23, oldAgent.getAgencyId());
+                stmt.setInt(24, oldAgent.getAgencyId());}
             else {
-                stmt.setString(21, null);
-                stmt.setString(22, null);
+                stmt.setString(23, null);
+                stmt.setString(24, null);
             }
 
 
@@ -245,14 +250,17 @@ public class AgentDb {
                     " AgtBusPhone , " +
                     " AgtEmail , " +
                     " AgtPosition , " +
-                    " AgencyId )  " +
+                    " AgencyId ,  " +
+                    " AgtUserId ,  " +
+                    " AgtPassword )  " +
                     " VALUES ( ? , " +
                     " ?  , " +
                     " ? ,  " +
                     " ? ,  " +
                     " ? ,  " +
                     " ? , " +
-                    " ? ) ";
+                    " ? , "+
+                    "?,?)";
             stmt =conn.prepareStatement(sql,Statement.RETURN_GENERATED_KEYS);
             //Assign values
             stmt.setString(1, newAgent.getAgtFirstName());
@@ -265,6 +273,10 @@ public class AgentDb {
                 stmt.setInt(7, newAgent.getAgencyId());
             else
                 stmt.setString(7, null  );
+
+            stmt.setString(8, newAgent.getAgtUserId());
+            stmt.setString(9, newAgent.getAgtPassword());
+
             // Execute the statement
             rows = stmt.executeUpdate();
             //this will add an id to our new agent added to the table

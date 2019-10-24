@@ -6,22 +6,22 @@
  * Date: Oct 12 2019
  */
 
-package raman.homelearn.workshopandroid.model;
+package model;
 
 import java.io.Serializable;
 
 public class Agent implements Serializable {
-        // Member variables
-        private int agentId;
-        private String agtFirstName;        // nullable
-        private String agtMiddleInitial;    // nullable
-        private String agtLastName;         // nullable
-        private String agtBusPhone;         // nullable
-        private String agtEmail;            // nullable
-        private String agtPosition;         // nullable
-        private Integer agencyId;           // nullable
-        private String agtUserId;           // nullable
-        private String agtPassword;         // nullable
+    // Member variables
+    private int agentId;
+    private String agtFirstName;        // nullable
+    private String agtMiddleInitial;    // nullable
+    private String agtLastName;         // nullable
+    private String agtBusPhone;         // nullable
+    private String agtEmail;            // nullable
+    private String agtPosition;         // nullable
+    private Integer agencyId;           // nullable
+    private String agtUserId;           // nullable
+    private String agtPassword;         // nullable
 
     public int getAgentId() {
         return agentId;
@@ -104,7 +104,7 @@ public class Agent implements Serializable {
     }
 
     public Agent(int agentId, String agtFirstName, String agtMiddleInitial, String agtLastName,
-                 String agtBusPhone, String agtEmail, String agtPosition, Integer agencyId) {
+                 String agtBusPhone, String agtEmail, String agtPosition, Integer agencyId, String agtUserId, String agtPassword) {
         this.agentId = agentId;
         this.agtFirstName = agtFirstName;
         this.agtMiddleInitial = agtMiddleInitial;
@@ -113,6 +113,8 @@ public class Agent implements Serializable {
         this.agtEmail = agtEmail;
         this.agtPosition = agtPosition;
         this.agencyId = agencyId;
+        this.agtUserId = agtUserId;
+        this.agtPassword = agtPassword;
     }
 
     @Override
