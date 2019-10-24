@@ -14,8 +14,8 @@ public class DbConnection {
         try {
             Class.forName("com.mysql.jdbc.Driver");
             Properties userInfo = new Properties();
-            userInfo.put("user", "salah");
-            userInfo.put("password", "");
+            userInfo.put("user", "admin");
+            userInfo.put("password", "password");
             conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/travelexperts", userInfo);
 
 
