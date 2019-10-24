@@ -6,9 +6,11 @@
  * Date: Oct 12 2019
  */
 
-package model;
+package raman.homelearn.workshopandroid.model;
 
-public class Agent {
+import java.io.Serializable;
+
+public class Agent implements Serializable {
         // Member variables
         private int agentId;
         private String agtFirstName;        // nullable
@@ -18,7 +20,8 @@ public class Agent {
         private String agtEmail;            // nullable
         private String agtPosition;         // nullable
         private Integer agencyId;           // nullable
-
+        private String agtUserId;           // nullable
+        private String agtPassword;         // nullable
 
     public int getAgentId() {
         return agentId;
@@ -84,6 +87,22 @@ public class Agent {
         this.agencyId = agencyId;
     }
 
+    public String getAgtUserId() {
+        return agtUserId;
+    }
+
+    public void setAgtUserId(String agtUserId) {
+        this.agtUserId = agtUserId;
+    }
+
+    public String getAgtPassword() {
+        return agtPassword;
+    }
+
+    public void setAgtPassword(String agtPassword) {
+        this.agtPassword = agtPassword;
+    }
+
     public Agent(int agentId, String agtFirstName, String agtMiddleInitial, String agtLastName,
                  String agtBusPhone, String agtEmail, String agtPosition, Integer agencyId) {
         this.agentId = agentId;
@@ -98,16 +117,7 @@ public class Agent {
 
     @Override
     public String toString() {
-        return "Agent{" +
-                "agentId=" + agentId +
-                ", agtFirstName='" + agtFirstName + '\'' +
-                ", agtMiddleInitial='" + agtMiddleInitial + '\'' +
-                ", agtLastName='" + agtLastName + '\'' +
-                ", agtBusPhone='" + agtBusPhone + '\'' +
-                ", agtEmail='" + agtEmail + '\'' +
-                ", agtPosition='" + agtPosition + '\'' +
-                ", agencyId=" + agencyId +
-                '}';
+        return agtFirstName + " " + agtLastName;
     }
 
     //copy an agent method

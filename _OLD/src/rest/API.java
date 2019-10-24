@@ -16,6 +16,7 @@ public class API {
      */
     public static String getJson(String urlString) {
         try {
+            System.out.println("Connection URL: " + urlString);
             URL url = new URL(urlString);
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setRequestMethod("GET");
