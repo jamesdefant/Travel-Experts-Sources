@@ -1,0 +1,467 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Rectangle2D?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<GridPane alignment="center" hgap="10" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="734.0" prefWidth="1280.0" vgap="10" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <columnConstraints>
+      <ColumnConstraints />
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+      <RowConstraints />
+   </rowConstraints>
+   <children>
+      <Pane maxHeight="1080.0" maxWidth="1920.0" minHeight="600.0" minWidth="800.0" prefHeight="716.0" prefWidth="1270.0" GridPane.columnIndex="1">
+         <children>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+               <children>
+                  <TabPane prefHeight="724.0" prefWidth="1259.0" tabClosingPolicy="UNAVAILABLE">
+                    <tabs>
+                      <Tab text="Start">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="442.0" prefWidth="1259.0">
+                                 <children>
+                                    <ImageView fitHeight="381.0" fitWidth="567.0" layoutX="279.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@img/travelexperts-logo-vert.jpg" />
+                                       </image>
+                                    </ImageView>
+                                    <AnchorPane fx:id="apCredentials" layoutX="458.0" layoutY="451.0" prefHeight="132.0" prefWidth="385.0">
+                                       <children>
+                                          <Label layoutX="12.0" layoutY="13.0" text="Username:" />
+                                          <PasswordField fx:id="tfUserPass" layoutX="79.0" layoutY="39.0" onKeyPressed="#onTFpassKeyPressed" />
+                                          <TextField fx:id="tfUserName" layoutX="79.0" layoutY="9.0" />
+                                          <Label layoutX="14.0" layoutY="43.0" text="Password:" />
+                                          <Button fx:id="btnLogin" layoutX="79.0" layoutY="66.0" mnemonicParsing="false" onAction="#onActionBtnLoginClick" onMouseEntered="#OnMouseEnteredLoginBtn" text="Login" />
+                                          <Button fx:id="btnLogOut" layoutX="134.0" layoutY="66.0" mnemonicParsing="false" onAction="#onActionBtnLogoutClick" text="Logout" />
+                                       </children>
+                                    </AnchorPane>
+                                    <Button fx:id="btnExit" alignment="CENTER" contentDisplay="RIGHT" layoutX="1190.0" layoutY="598.0" mnemonicParsing="false" onAction="#onActionBtnExit" prefHeight="43.0" prefWidth="75.0" text="Exit" textAlignment="CENTER" />
+                                 </children>
+                              </AnchorPane>
+                        </content>
+                      </Tab>
+                        <Tab fx:id="tabAgents" text="Agents">
+                           <content>
+
+                              <Pane fx:id="pane" maxHeight="1.8" style="-fx-border-color: #000000;" GridPane.rowIndex="1" />
+
+                              <AnchorPane fx:id="anpEmp" maxWidth="1.7976931348623157E308" minHeight="0.0" minWidth="0.0" prefHeight="693.0" prefWidth="1259.0">
+                                 <children>
+                                    <ImageView fx:id="imgFired" layoutX="975.0" layoutY="106.0" opacity="0.62" pickOnBounds="true" preserveRatio="true">
+                                       <viewport>
+                                          <Rectangle2D />
+                                       </viewport>
+                                       <image>
+                                          <Image url="@Fired.gif" />
+                                       </image></ImageView>
+                                    <Label layoutX="263.0" layoutY="14.0" text="Our Glorious Agents">
+                                       <font>
+                                          <Font name="System Bold" size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <TableView fx:id="tblAgencies" layoutX="262.0" layoutY="437.0" prefHeight="96.0" prefWidth="980.0" />
+                                    <Label layoutX="262.0" layoutY="410.0" text="Agencies">
+                                       <font>
+                                          <Font name="System Bold" size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <AnchorPane fx:id="apControls" layoutX="14.0" layoutY="14.0" prefHeight="614.0" prefWidth="203.0">
+                                       <children>
+                                          <TextField fx:id="tfAgentId" editable="false" layoutX="22.0" layoutY="100.0" prefHeight="25.0" prefWidth="35.0" />
+                                          <TextField fx:id="tfAgtFirstName" layoutX="14.0" layoutY="152.0" />
+                                          <TextField fx:id="tfAgtMiddleInitial" layoutX="14.0" layoutY="200.0" />
+                                          <TextField fx:id="tfAgtLastName" layoutX="14.0" layoutY="252.0" />
+                                          <TextField fx:id="tfAgtBusPhone" layoutX="14.0" layoutY="317.0" />
+                                          <Label fx:id="lblID" layoutX="22.0" layoutY="79.0" text="ID:" />
+                                          <Label fx:id="lbl1" layoutX="16.0" layoutY="129.0" text="First Name" />
+                                          <Label fx:id="lbl2" layoutX="16.0" layoutY="180.0" text="Middle Name" />
+                                          <Label fx:id="lbl3" layoutX="17.0" layoutY="234.0" text="Last Name" />
+                                          <Label fx:id="lbl4" layoutX="14.0" layoutY="348.0" text="Email" />
+                                          <Label fx:id="lbl7" layoutX="16.0" layoutY="294.0" text="Business Phone" />
+                                          <Label fx:id="lbl5" layoutX="14.0" layoutY="410.0" text="Position" />
+                                          <Label fx:id="lbl64" layoutX="88.0" layoutY="81.0" text="Agency ID:" />
+                                          <TextField fx:id="tfAgtEmail" layoutX="14.0" layoutY="375.0" />
+                                          <TextField fx:id="tfAgtPosition" layoutX="14.0" layoutY="430.0" />
+                                          <TextField fx:id="tfAgencyId" layoutX="88.0" layoutY="100.0" prefHeight="25.0" prefWidth="26.0" />
+                                          <Button fx:id="btnUpdate" layoutX="10.0" layoutY="479.0" mnemonicParsing="false" onMouseClicked="#onUpdateAgentBtnClick" prefHeight="29.0" prefWidth="160.0" text="Update Agent" wrapText="true" />
+                                          <Button fx:id="btnInsertAgent" layoutX="12.0" layoutY="517.0" mnemonicParsing="false" onMouseClicked="#onInsertAgentBtnClick" prefHeight="25.0" prefWidth="160.0" text="Add Agent" />
+                                          <Button fx:id="btnClearAgent" layoutX="18.0" layoutY="40.0" mnemonicParsing="false" onMouseClicked="#onClearAgentBtnClick" prefHeight="29.0" prefWidth="54.0" text="Clear" />
+                                       </children>
+                                    </AnchorPane>
+                                    <Button fx:id="btnDeleteAgent" layoutX="1025.0" layoutY="76.0" mnemonicParsing="false" onMouseClicked="#onDeleteAgentBtnClick" prefHeight="275.0" prefWidth="233.0" text="Delete Agent" wrapText="true" />
+                                    <TableView fx:id="tblAgents" layoutX="228.0" layoutY="50.0" prefHeight="352.0" prefWidth="790.0" />
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </Tab>
+                        <Tab fx:id="tabCustomers" text="Customers">
+                           <content>
+                              <AnchorPane fx:id="anpEmp1" maxWidth="1.7976931348623157E308" minHeight="0.0" minWidth="0.0" prefHeight="683.0" prefWidth="1259.0">
+                                 <children>
+                                    <TableView fx:id="tblCustomers" layoutX="371.0" layoutY="41.0" onMouseClicked="#OnMouseClickedCusttable" prefHeight="227.0" prefWidth="533.0" />
+                                    <TableView fx:id="tblBookings" layoutX="370.0" layoutY="355.0" onMouseClicked="#OnMouseClickedBooktable" prefHeight="237.0" prefWidth="538.0" />
+                                    <VBox layoutX="5.0" layoutY="31.0" prefHeight="360.0" prefWidth="98.0">
+                                       <children>
+                                          <Label prefHeight="20.0" prefWidth="84.0" text="Customer Id:">
+                                             <VBox.margin>
+                                                <Insets top="10.0" />
+                                             </VBox.margin>
+                                          </Label>
+                                          <Label prefHeight="17.0" prefWidth="88.0" text="First name:">
+                                             <VBox.margin>
+                                                <Insets top="10.0" />
+                                             </VBox.margin>
+                                          </Label>
+                                          <Label prefHeight="17.0" prefWidth="88.0" text="Last name:">
+                                             <VBox.margin>
+                                                <Insets top="10.0" />
+                                             </VBox.margin>
+                                          </Label>
+                                          <Label prefHeight="17.0" prefWidth="88.0" text="Address:">
+                                             <VBox.margin>
+                                                <Insets top="10.0" />
+                                             </VBox.margin>
+                                          </Label>
+                                          <Label prefHeight="17.0" prefWidth="88.0" text="City:">
+                                             <VBox.margin>
+                                                <Insets top="10.0" />
+                                             </VBox.margin>
+                                          </Label>
+                                          <Label prefHeight="17.0" prefWidth="88.0" text="Prov:">
+                                             <VBox.margin>
+                                                <Insets top="10.0" />
+                                             </VBox.margin>
+                                          </Label>
+                                          <Label prefHeight="17.0" prefWidth="88.0" text="Postal Code:">
+                                             <VBox.margin>
+                                                <Insets top="10.0" />
+                                             </VBox.margin>
+                                          </Label>
+                                          <Label prefHeight="17.0" prefWidth="88.0" text="Country:">
+                                             <VBox.margin>
+                                                <Insets top="10.0" />
+                                             </VBox.margin>
+                                          </Label>
+                                          <Label prefHeight="17.0" prefWidth="88.0" text="Home Phone:">
+                                             <VBox.margin>
+                                                <Insets top="10.0" />
+                                             </VBox.margin>
+                                          </Label>
+                                          <Label prefHeight="17.0" prefWidth="88.0" text="Bus Phone:">
+                                             <VBox.margin>
+                                                <Insets top="10.0" />
+                                             </VBox.margin>
+                                          </Label>
+                                          <Label prefHeight="17.0" prefWidth="88.0" text="Email:">
+                                             <VBox.margin>
+                                                <Insets top="10.0" />
+                                             </VBox.margin>
+                                          </Label>
+                                          <Label prefHeight="17.0" prefWidth="88.0" text="Agent Id:">
+                                             <VBox.margin>
+                                                <Insets top="10.0" />
+                                             </VBox.margin>
+                                          </Label>
+                                          <Label prefHeight="17.0" prefWidth="88.0" text="Username:">
+                                             <VBox.margin>
+                                                <Insets top="10.0" />
+                                             </VBox.margin>
+                                          </Label>
+                                          <Label prefHeight="17.0" prefWidth="88.0" text="Password:">
+                                             <VBox.margin>
+                                                <Insets top="10.0" />
+                                             </VBox.margin>
+                                          </Label>
+                                       </children>
+                                    </VBox>
+                                    <VBox layoutX="115.0" layoutY="33.0" prefHeight="366.0" prefWidth="211.0">
+                                       <children>
+                                          <TextField fx:id="tfCustomerId" />
+                                          <TextField fx:id="tfCustFirstName">
+                                             <VBox.margin>
+                                                <Insets top="2.0" />
+                                             </VBox.margin>
+                                          </TextField>
+                                          <TextField fx:id="tfCustLastName">
+                                             <VBox.margin>
+                                                <Insets top="2.0" />
+                                             </VBox.margin>
+                                          </TextField>
+                                          <TextField fx:id="tfCustAddress">
+                                             <VBox.margin>
+                                                <Insets top="2.0" />
+                                             </VBox.margin>
+                                          </TextField>
+                                          <TextField fx:id="tfCustCity">
+                                             <VBox.margin>
+                                                <Insets top="2.0" />
+                                             </VBox.margin>
+                                          </TextField>
+                                          <TextField fx:id="tfCustProv">
+                                             <VBox.margin>
+                                                <Insets top="2.0" />
+                                             </VBox.margin>
+                                          </TextField>
+                                          <TextField fx:id="tfCustPostal">
+                                             <VBox.margin>
+                                                <Insets top="2.0" />
+                                             </VBox.margin>
+                                          </TextField>
+                                          <TextField fx:id="tfCustCountry" prefHeight="25.0" prefWidth="576.0">
+                                             <VBox.margin>
+                                                <Insets top="2.0" />
+                                             </VBox.margin>
+                                          </TextField>
+                                          <TextField fx:id="tfCustHomePhone">
+                                             <VBox.margin>
+                                                <Insets top="2.0" />
+                                             </VBox.margin>
+                                          </TextField>
+                                          <TextField fx:id="tfCustBusPhone">
+                                             <VBox.margin>
+                                                <Insets top="2.0" />
+                                             </VBox.margin>
+                                          </TextField>
+                                          <TextField fx:id="tfCustEmail" />
+                                          <TextField fx:id="tfAgentId">
+                                             <VBox.margin>
+                                                <Insets top="2.0" />
+                                             </VBox.margin>
+                                          </TextField>
+                                          <TextField fx:id="tfCustUsername">
+                                             <VBox.margin>
+                                                <Insets top="2.0" />
+                                             </VBox.margin>
+                                          </TextField>
+                                          <TextField fx:id="tfCustPassword" prefHeight="15.0" prefWidth="214.0">
+                                             <VBox.margin>
+                                                <Insets top="2.0" />
+                                             </VBox.margin>
+                                          </TextField>
+                                       </children>
+                                    </VBox>
+                                    <HBox layoutX="14.0" layoutY="470.0" prefHeight="0.0" prefWidth="274.0">
+                                       <children>
+                                          <Button fx:id="btnEditCustomer" mnemonicParsing="false" onAction="#OnActionClickBtnEditCust" text="Edit" />
+                                          <Button fx:id="btnAddCustomer" mnemonicParsing="false" onAction="#OnActionBtnAddCust" text="Add" />
+                                          <Button fx:id="btnUpdateCustomer" mnemonicParsing="false" onAction="#OnActionBtnUpdateCust" text="Update" />
+                                          <Button fx:id="btnCancelCustomer" mnemonicParsing="false" onAction="#OnActionBtnCancelCust" text="Cancel" />
+                                       </children>
+                                    </HBox>
+                                    <Label layoutX="367.0" layoutY="14.0" prefHeight="17.0" prefWidth="78.0" text="Customers">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="367.0" layoutY="317.0" prefHeight="0.0" prefWidth="78.0" text="Bookings">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                    </Label>
+                                 </children></AnchorPane>
+                           </content>
+                        </Tab>
+                        <Tab fx:id="tabSandP" text="Suppliers And Products">
+                           <content>
+                              <AnchorPane fx:id="anpEmp2" maxWidth="1.7976931348623157E308" minHeight="0.0" minWidth="0.0" prefHeight="515.0" prefWidth="1259.0">
+                                 <children>
+                                    <TableView fx:id="tblSuppliers" layoutX="630.0" layoutY="80.0" prefHeight="339.0" prefWidth="602.0" />
+                                    <Label layoutX="630.0" layoutY="41.0" text="All those who supply us with all our goodies">
+                                       <font>
+                                          <Font name="System Bold" size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <ImageView fx:id="imageViewAgentPhoto1" fitHeight="204.0" fitWidth="200.0" layoutX="466.0" layoutY="454.0" pickOnBounds="true" preserveRatio="true" />
+                                    <TableView fx:id="tblProducts" layoutX="27.0" layoutY="79.0" prefHeight="341.0" prefWidth="564.0" />
+                                    <Label layoutX="27.0" layoutY="41.0" text="Products">
+                                       <font>
+                                          <Font name="System Bold" size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <AnchorPane layoutX="28.0" layoutY="443.0" prefHeight="200.0" prefWidth="1212.0">
+                                       <children>
+                                          <Button fx:id="btnAddProd" layoutX="208.0" layoutY="88.0" mnemonicParsing="false" onMouseClicked="#btnAddProdOnMouseClick" text="Add Product" />
+                                          <Button fx:id="btnUpdateProd" layoutX="298.0" layoutY="88.0" mnemonicParsing="false" onMouseClicked="#btnUpdateProdOnMouseClick" text="Update Product" />
+                                          <Button fx:id="btnClearProd" layoutX="113.0" layoutY="88.0" mnemonicParsing="false" onMouseClicked="#btnClearProdOnMouseClick" text="Clear written" />
+                                          <Label layoutX="21.0" layoutY="24.0" text="Product Id:" />
+                                          <Label layoutX="21.0" layoutY="54.0" text="Product Name" />
+                                          <TextField fx:id="tfProdId" layoutX="113.0" layoutY="20.0" prefHeight="25.0" prefWidth="52.0" />
+                                          <TextField fx:id="tfProdName" layoutX="113.0" layoutY="50.0" prefHeight="25.0" prefWidth="299.0" />
+                                          <Label layoutX="775.0" layoutY="24.0" text="Supplier Id:" />
+                                          <TextField fx:id="tfSupplierId" layoutX="848.0" layoutY="12.0" prefHeight="25.0" prefWidth="52.0" />
+                                          <TextField fx:id="tfSupplierName" layoutX="848.0" layoutY="50.0" prefHeight="25.0" prefWidth="269.0" />
+                                          <Label layoutX="775.0" layoutY="54.0" text="Supplier" />
+                                          <Button fx:id="btnAddSupplier" layoutX="943.0" layoutY="88.0" mnemonicParsing="false" onMouseClicked="#btnAddSupplierOnMouseClick" text="Add Supplier" />
+                                          <Button fx:id="btnUpdateSupplier" layoutX="1033.0" layoutY="88.0" mnemonicParsing="false" onMouseClicked="#btnUpdateSupplierOnMouseClick" text="Update Supplier" />
+                                          <Button fx:id="btnClearSupplier" layoutX="848.0" layoutY="88.0" mnemonicParsing="false" onMouseClicked="#btnClearSupplierOnMouseClick" text="Clear written" />
+                                       </children>
+                                    </AnchorPane>
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </Tab>
+                        <Tab fx:id="tabPackages" text="Packages">
+                           <content>
+                              <AnchorPane fx:id="anpEmp11" maxWidth="1.7976931348623157E308" minHeight="0.0" minWidth="0.0" prefHeight="515.0" prefWidth="1259.0">
+                                 <children>
+                                    <AnchorPane layoutX="19.0" layoutY="399.0" prefHeight="264.0" prefWidth="987.0">
+                                       <children>
+                                          <Label fx:id="lbl311" layoutX="676.0" layoutY="-42.0" />
+                                          <GridPane layoutX="428.0" layoutY="28.0" prefHeight="126.0" prefWidth="556.0">
+                                            <columnConstraints>
+                                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="234.0" minWidth="10.0" prefWidth="83.0" />
+                                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="400.0" minWidth="10.0" prefWidth="400.0" />
+                                            </columnConstraints>
+                                            <rowConstraints>
+                                              <RowConstraints maxHeight="58.0" minHeight="10.0" prefHeight="31.0" vgrow="SOMETIMES" />
+                                              <RowConstraints maxHeight="104.0" minHeight="10.0" prefHeight="95.0" vgrow="SOMETIMES" />
+                                            </rowConstraints>
+                                          </GridPane>
+                                       </children>
+                                    </AnchorPane>
+                                    <AnchorPane layoutX="69.0" layoutY="386.0" prefHeight="264.0" prefWidth="987.0">
+                                       <children>
+                                          <Label fx:id="lbl3111" layoutX="676.0" layoutY="-42.0" />
+                                          <Button fx:id="btnUpdatePackage" layoutX="14.0" layoutY="79.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="117.0" text="Update Package" wrapText="true" />
+                                          <Button fx:id="btnAddPackage" layoutX="15.0" layoutY="35.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="115.0" text="Add Package" />
+                                          <Button fx:id="btnClearPackage" layoutX="274.0" layoutY="154.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="131.0" text="Clear" />
+                                          <Button fx:id="btnApplyPackageChanges" layoutX="872.0" layoutY="165.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="101.0" text="Apply" />
+                                          <Button fx:id="btnDeletePkg" layoutX="14.0" layoutY="118.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="117.0" text="Delete Package" wrapText="true" />
+                                          <GridPane layoutX="144.0" layoutY="28.0" prefHeight="115.0" prefWidth="261.0">
+                                             <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                             </columnConstraints>
+                                             <rowConstraints>
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                             </rowConstraints>
+                                             <children>
+                                                <Label fx:id="lblID11" text="PkgId:" />
+                                                <Label fx:id="lbl211" text="Base Price (CAD):" GridPane.rowIndex="3" />
+                                                <Label fx:id="lbl711" text="Commission" GridPane.rowIndex="4" />
+                                                <TextField fx:id="tfPkgBasePrice" prefHeight="25.0" prefWidth="79.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                                <TextField fx:id="tfAgencyCommission" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                                <Label text="Start Date" GridPane.rowIndex="1" />
+                                                <DatePicker fx:id="dateStartDate" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                                <Label text="End Date" GridPane.rowIndex="2" />
+                                                <DatePicker fx:id="dateEndDate" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                                <ComboBox fx:id="cbPackageId" prefWidth="150.0" GridPane.columnIndex="1" />
+                                             </children>
+                                          </GridPane>
+                                          <GridPane layoutX="428.0" layoutY="28.0" prefHeight="126.0" prefWidth="556.0">
+                                             <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="234.0" minWidth="10.0" prefWidth="83.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="400.0" minWidth="10.0" prefWidth="400.0" />
+                                             </columnConstraints>
+                                             <rowConstraints>
+                                                <RowConstraints maxHeight="58.0" minHeight="10.0" prefHeight="31.0" vgrow="SOMETIMES" />
+                                                <RowConstraints maxHeight="104.0" minHeight="10.0" prefHeight="95.0" vgrow="SOMETIMES" />
+                                             </rowConstraints>
+                                             <children>
+                                                <Label text="Package Name:" />
+                                                <Label text="Description:" GridPane.rowIndex="1" />
+                                                <TextField fx:id="tfPkgName" prefHeight="25.0" prefWidth="398.0" GridPane.columnIndex="1" />
+                                                <TextArea fx:id="taPkgDesc" prefHeight="95.0" prefWidth="393.0" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                             </children>
+                                          </GridPane>
+                                       </children>
+                                    </AnchorPane>
+                                    <Label layoutX="42.0" layoutY="38.0" text="Packages">
+                                       <font>
+                                          <Font name="System Bold" size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <TableView layoutX="69.0" layoutY="79.0" prefHeight="303.0" prefWidth="986.0">
+                                      <columns>
+                                        <TableColumn fx:id="colPackageId" prefWidth="75.0" text="PkgID" />
+                                        <TableColumn fx:id="colPkgName" prefWidth="273.0" text="Package Name" />
+                                          <TableColumn fx:id="colPkgStartDate" minWidth="0.0" prefWidth="181.0" text="Start Date" />
+                                          <TableColumn fx:id="colPkgEndDate" prefWidth="76.0" text="End Date" />
+                                          <TableColumn fx:id="colPkgDescription" prefWidth="224.0" text="Description" />
+                                          <TableColumn fx:id="colPkgBasePrice" prefWidth="75.0" text="Base Price" />
+                                          <TableColumn fx:id="colPkgAgencyComm" prefWidth="81.0" text="Commission" />
+                                      </columns>
+                                    </TableView>
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </Tab>
+                        <Tab fx:id="tabReview" text="Review">
+                          <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <ImageView fitHeight="303.0" fitWidth="299.0" layoutX="31.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@img/linux1.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Label layoutX="408.0" layoutY="46.0" prefHeight="93.0" prefWidth="523.0" text="How did we do?">
+                                       <font>
+                                          <Font size="64.0" />
+                                       </font>
+                                    </Label>
+                                    <Button fx:id="btnClearReview" layoutX="359.0" layoutY="348.0" mnemonicParsing="false" onMouseClicked="#onBtnClearReviewClicked" prefHeight="37.0" prefWidth="205.0" text="clear and write something better" />
+                                    <Button layoutX="1019.0" layoutY="350.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="208.0" text="Send us Email" />
+                                    <TextArea fx:id="tfReview" layoutX="377.0" layoutY="130.0" prefHeight="200.0" prefWidth="846.0" />
+                                 </children>
+                              </AnchorPane>
+                          </content>
+                        </Tab>
+                        <Tab fx:id="tabFuture" text="Future Destination">
+                          <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <TextField editable="false" layoutX="107.0" prefHeight="138.0" prefWidth="1065.0" text="Our future travel destination....">
+                                       <font>
+                                          <Font name="System Bold Italic" size="65.0" />
+                                       </font>
+                                    </TextField>
+                                    <ImageView fitHeight="641.0" fitWidth="651.0" layoutX="256.0" layoutY="188.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@img/Mars1.jpg" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </AnchorPane>
+                          </content>
+                        </Tab>
+                    </tabs>
+                  </TabPane>
+               </children>
+            </AnchorPane>
+         </children>
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor>
+      </Pane>
+   </children>
+</GridPane>
